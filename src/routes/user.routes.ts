@@ -1,21 +1,22 @@
 import { Router } from "express";
 import controller from "../controllers/user.controller";
+import { requestLogger } from "../middleware/requestLogger";
 
 const router = Router();
 
 // Create
-router.post("/", controller.createUserHandler);
+router.post("/", requestLogger, controller.createUserHandler);
 
 // Read all
-router.get("/", controller.getUsersHandler);
+router.get("/", requestLogger, controller.getUsersHandler);
 
 // Read one
-router.get("/:id", controller.getUserHandler);
+router.get("/:id", requestLogger, controller.getUserHandler);
 
 // Update
-router.put("/:id", controller.updateUserHandler);
+router.put("/:id", requestLogger, controller.updateUserHandler);
 
 // Delete
-router.delete("/:id", controller.deleteUserHandler);
+router.delete("/:id", requestLogger, controller.deleteUserHandler);
 
 export default router;
