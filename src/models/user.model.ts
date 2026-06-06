@@ -1,14 +1,7 @@
 import mongoose, { Schema, model, Document, Model } from "mongoose";
+import type { UserInterface } from "../interfaces/user.interface";
 
-export interface IUser {
-  name: string;
-  email: string;
-  mobile: string;
-  address: string;
-  createdAt?: Date;
-}
-
-export interface IUserDocument extends IUser, Document {}
+export interface IUserDocument extends UserInterface, Document {}
 
 const userSchema = new Schema<IUserDocument>(
   {

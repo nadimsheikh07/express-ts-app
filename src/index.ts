@@ -1,9 +1,9 @@
 import express from "express";
 import connectDB from "./config/db";
 import userRoutes from "./routes/user.routes";
-import type { Request, Response } from "express";
+import type { Application, Request, Response } from "express";
 
-const app = express();
+const app: Application = express();
 
 // Connect to Database
 connectDB();

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import controller from "../controllers/user.controller";
-import { requestLogger } from "../middleware/requestLogger";
+import { requestLogger } from "../middlewares/requestLogger";
 
 const router = Router();
 
